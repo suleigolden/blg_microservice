@@ -13,7 +13,7 @@ app.get('/posts', (req, res) =>{
 
 app.post('/posts', (req, res) =>{
     const id = uuid.v4();
-    const {title} = req.body.title;
+    const {title} = req.body;
 
     posts[id] = {
         id, title
