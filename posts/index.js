@@ -12,8 +12,8 @@ const posts = {};
 
 app.get('/posts', (req, res) =>{
     res.send(posts);
-});
-
+}); 
+ 
 app.post('/posts', async (req, res) =>{
     const id = uuid.v4();
     const {title} = req.body;
@@ -33,7 +33,7 @@ app.post('/posts', async (req, res) =>{
 });
 
 app.post('/events', (req,res) => {
-    console.log('Reciev Event ', req.body.type);
+    console.log('Recieved Event ', req.body.type);
     res.send({});
 });
 

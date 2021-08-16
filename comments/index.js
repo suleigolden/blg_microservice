@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const commentById = {};
+const commentById = {}; 
 
 app.get('/posts/:id/comments', (req, res) =>{
    res.send(commentById[req.params.id] || []);
@@ -34,7 +34,7 @@ app.post('/posts/:id/comments', async (req, res) =>{
 });
 
 app.post('/events', (req,res) => {
-    console.log('Reciev Event ', req.body.type);
+    console.log('Recieved Event ', req.body.type);
     res.send({});
 });
 
