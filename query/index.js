@@ -4,7 +4,7 @@ import cors from 'cors';
 
 
 const app = express();
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(cors());
 
 
@@ -24,10 +24,10 @@ app.post('/events', (req,res) =>{
         const {id, content, postId} = data;
 
         const post = posts[postId];
-        post.comments.push({id, content});
+        post.comments.push({id, content}); 
     }
 
-    console.log(posts);
+    console.log(posts);  
     res.send({});
 });
 

@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import axios from 'axios';
 
 const app = express();
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 app.post('/events', (req,res)=>{
 
