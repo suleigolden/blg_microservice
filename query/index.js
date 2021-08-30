@@ -14,17 +14,17 @@ app.get('/posts', (req,res) =>{
 app.post('/events', (req,res) =>{
     const {type, data} = req.body;
 
-    if(type === "PostCreated"){
+    if(type === "PostCreated"){ //Check if event is new post created
         const {id, title } = data;
         posts[id] = {id, title, comments: []};
     }
-    if(type === "CommentCreated"){
+    if(type === "CommentCreated"){//Check if event is new comment created
         const {id, content, postId, status} = data;
 
         const post = posts[postId];
         post.comments.push({id, content, status}); 
     }
-    if(type === "CommentUpdated"){
+    if(type === "CommentUpdated"){ //Check if event is comment update
         const {id, content, postId, status} = data;
         const post = posts[postId];
         const comment = post.comments.find(comment =>{
